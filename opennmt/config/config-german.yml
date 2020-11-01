@@ -1,0 +1,35 @@
+save_checkpoint_steps: 2621
+seed: 1
+train_steps: 65525
+valid_steps: 2621
+report_every: 500
+
+encoder_type: rnn
+decoder_type: rnn
+word_vec_size: 300
+rnn_size: 100
+layers: 2
+dropout: 0.3
+batch_size: 20
+seed: 1
+optim: adadelta
+learning_rate: 1.0
+
+world_size: 1
+gpu_ranks:
+- 0
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: ../german_nouns/train.src
+        path_tgt: ../german_nouns/train.tgt
+    valid:
+        path_src: ../german_nouns/val.src
+        path_tgt: ../german_nouns/val.tgt
+save_model: models/lstms2s
+save_data: data_preprocessed/german
+src_vocab: data_preprocessed/german.vocab.src
+tgt_vocab: data_preprocessed/german.vocab.tgt
+overwrite: true
+

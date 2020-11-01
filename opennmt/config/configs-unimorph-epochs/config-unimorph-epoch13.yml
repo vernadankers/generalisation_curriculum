@@ -1,0 +1,35 @@
+save_checkpoint_steps: 4885
+seed: 1
+train_steps: 4885
+valid_steps: 393
+report_every: 200
+train_from: models/lstms2s_step_4492.pt
+encoder_type: brnn
+decoder_type: rnn
+word_vec_size: 100
+rnn_size: 100
+layers: 2
+dropout: 0.3
+batch_size: 20
+seed: 1
+optim: adadelta
+learning_rate: 1.0
+
+world_size: 1
+gpu_ranks:
+- 0
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: ../unimorph/curriculum1/train_epoch=13.src
+        path_tgt: ../unimorph/curriculum1/train_epoch=13.tgt
+    valid:
+        path_src: ../unimorph/val.src
+        path_tgt: ../unimorph/val.tgt
+save_model: models/lstms2s
+save_data: data_preprocessed/unimorph
+src_vocab: data_preprocessed/unimorph.vocab.src
+tgt_vocab: data_preprocessed/unimorph.vocab.tgt
+overwrite: true
+
