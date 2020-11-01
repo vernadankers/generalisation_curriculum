@@ -1,9 +1,9 @@
-save_checkpoint_steps: 812
-seed: 1
-train_steps: 812
+save_checkpoint_steps: 5684
+seed: 3
+train_steps: 5684
 valid_steps: 406
 report_every: 200
-train_from: models/lstms2s_step_406.pt
+train_from: models/no_curriculum_seed=3/lstms2s_13.pt
 encoder_type: brnn
 decoder_type: rnn
 word_vec_size: 100
@@ -26,7 +26,7 @@ data:
     valid:
         path_src: ../data/unimorph/val.src
         path_tgt: ../data/unimorph/val.tgt
-save_model: models/lstms2s
+save_model: models/no_curriculum_seed=3/lstms2s_14
 save_data: data_preprocessed/unimorph
 src_vocab: data_preprocessed/unimorph.vocab.src
 tgt_vocab: data_preprocessed/unimorph.vocab.tgt
